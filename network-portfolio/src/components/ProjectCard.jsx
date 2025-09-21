@@ -1,15 +1,15 @@
 // src/components/ProjectCard.jsx
-// A reusable card to showcase individual projects with image, description & links.
-
 export default function ProjectCard({ title, description, image, github, demo }) {
   return (
-    <div className="bg-[#1a1c2c] rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+    <div className="bg-[#1a1c2c] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-transform duration-300">
       {/* Project Image */}
-      <img
-        src={image}
-        alt={`${title} preview`}
-        className="w-full h-48 object-cover"
-      />
+      <div className="overflow-hidden">
+        <img
+          src={image}
+          alt={`${title} preview`}
+          className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
 
       {/* Project Content */}
       <div className="p-5 flex flex-col gap-3">
