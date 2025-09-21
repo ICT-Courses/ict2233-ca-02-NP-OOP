@@ -1,31 +1,27 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
-  // State to track dark mode
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
 
-  // Load user's preference from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("darkMode");
-    if (saved) setDarkMode(JSON.parse(saved));
-  }, []);
-
-  // Toggle dark mode function
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => {
-      const newMode = !prev;
-      localStorage.setItem("darkMode", JSON.stringify(newMode));
-      // Toggle Tailwind dark class on body
-      if (newMode) document.documentElement.classList.add("dark");
-      else document.documentElement.classList.remove("dark");
-      return newMode;
-    });
-  };
+    const root = window.document.documentElement;
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
     <button
-      onClick={toggleDarkMode}
-      className="ml-4 px-3 py-1 rounded bg-[#00d1ff] text-[#0f111a] font-mono hover:bg-[#00ffae] transition-colors duration-300"
+      onClick={() => setDarkMode(!darkMode)}
+      className="px-3 py-1 rounded-lg bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white transition"
     >
       {darkMode ? "Light Mode" : "Dark Mode"}
     </button>
