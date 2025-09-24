@@ -1,4 +1,3 @@
-// src/pages/Projects.jsx
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../config/projectsData";
 
@@ -6,10 +5,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#0f111a] text-white px-6 py-16"
+      className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-6 py-16"
     >
-      <h2 className="text-4xl font-bold mb-4 text-center">My Projects 🚀</h2>
-      <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+      <h2 className="text-4xl font-bold mb-4 text-center">My Projects</h2>
+      <p className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
         A collection of apps, tools, and labs I’ve built — showcasing both
         software development and networking skills.
       </p>
