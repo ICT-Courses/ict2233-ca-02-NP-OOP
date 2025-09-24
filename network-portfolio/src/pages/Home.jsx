@@ -85,7 +85,7 @@ Router# show ip route
       <footer className="relative z-10 w-full bg-gray-100 dark:bg-gray-800 py-6 mt-12">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-            © {new Date().getFullYear()} Busy Works. All rights reserved.
+            © {new Date().getFullYear()} P.D.N.N PALIHENA. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a

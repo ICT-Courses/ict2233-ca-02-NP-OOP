@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 text-2xl font-bold">
-            Busy Works
+            Network Security
           </div>
 
           {/* Desktop Menu */}
